@@ -164,15 +164,11 @@ function findMarker(rows, marker) {
       if (cands.length) {
         return { value: cands[0].norm, confidence: cands.length === 1 ? "high" : "medium", row: row.text };
       }
-      // result may sit on the next 1-2 visual lines (name wrapped across rows).
-      // For the row two lines down, the value must sit at the very start of the
-      // row (idx<=3) and the intervening row must be a pure name continuation
-      // (no digits) so we never skip into an unrelated test's row.
-      for (let k = 1; k <= 2 && r + k < rows.length; k++) {
-        const maxStart = k === 1 ? 60 : 3;
-        const nc = resultCandidates(rows[r + k].text, 0, marker.id, maxStart);
-        if (nc.length) return { value: nc[0].norm, confidence: "low", row: rows[r + k].text };
-        if (/\d/.test(rows[r + k].text)) break;
+      // Conservative continuation: only an adjacent numeric result on the same page.
+      const next = rows[r + 1];
+      if (next && next.page === row.page && /^\s*\d/.test(next.text)) {
+        const nc = resultCandidates(next.text, 0, marker.id, 3);
+        if (nc.length) return { value: nc[0].norm, confidence: "low", row: next.text };
       }
     }
   }
