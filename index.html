@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Health Dashboard | Synthetic Demo</title>
+<title>Health Dashboard</title>
 <meta name="theme-color" content="#0b0f14">
 <link rel="stylesheet" href="css/main.css">
 <script src="vendor/chart.umd.min.js"></script>
@@ -30,10 +30,33 @@
 </header>
 
 <main class="page">
-<div class="demo-banner"><strong>Synthetic demo. No real patient records.</strong><p>Explore fictional lab trends, review an example PDF, and see general lifestyle education. Not medical advice.</p><button class="btn btn-ghost" id="reset-demo">Reset demo</button></div>
+<div class="sample-bar"><span>Sample profile &middot; Fictional records</span><button class="btn btn-ghost" id="reset-demo">Reset sample</button></div>
 
 <section class="tab-panel" id="tab-dashboard">
   <div class="demo-intro"><span class="eyebrow">PERSONAL HEALTH ANALYTICS</span><h1>From scattered reports to a clearer history.</h1><p>Review changes across 29 biomarkers. The figures below are invented to illustrate the product, not health outcomes.</p><div class="demo-stats" id="demo-stats"></div></div>
+  <div class="hero">
+    <div class="ring-wrap">
+      <svg viewBox="0 0 168 168" width="100%" height="100%">
+        <circle class="ring-track" cx="84" cy="84" r="74"></circle>
+        <circle class="ring-val" id="ring-val" cx="84" cy="84" r="74"></circle>
+      </svg>
+      <div class="ring-center"><div><div class="num" id="ring-num">-</div><div class="cap">out of 100</div></div></div>
+    </div>
+    <div class="hero-right">
+      <h2>Health Trend Score <span class="delta-chip" id="hero-delta"></span></h2>
+      <div class="hero-sub" id="hero-date"></div>
+      <p class="hero-sub">Illustrative index, not a clinical assessment.</p>
+      <div class="breakdown" id="breakdown"></div>
+    </div>
+    <div class="score-trend"><canvas id="chart-score" aria-label="Health trend score over time" role="img"></canvas></div>
+    <div class="hero-foot">
+      <details>
+        <summary>Scoring methodology</summary>
+        <p>An illustrative index of tracked lab values and trends, not a clinical assessment. This custom score is not clinically validated and does not measure overall health or disease risk.</p><p>For each scored marker, a base index is 100 inside its configured interval and decreases outside it. The calculation combines base (60%), base plus a capped directional trend adjustment (25%), and base minus a repeated-out-of-range penalty (15%), clipped to 0-100. The aggregate is a normalized weighted mean; category bars are unweighted means of available scored markers. Not all 29 markers contribute.</p><p>Missing measurements carry forward the last available value. No observations means no score. Directional assumptions and ranges are illustrative, not personalized clinical targets. A higher score is not evidence of improved health.</p><p><a href="data/baseline.json" target="_blank" rel="noopener">View marker weights and scoring intervals</a></p>
+      </details>
+    </div>
+  </div>
+
   <div class="digest" id="digest" hidden>
     <h3>Changes between latest available measurements</h3>
     <div class="digest-chips" id="digest-chips"></div>
@@ -45,17 +68,17 @@
 </section>
 
 <section class="tab-panel" id="tab-plan" hidden>
-<div class="plan-section"><h2>Everyday habits, explained</h2><p class="plan-intro">Prewritten educational examples alongside the demo trends. These do not change with uploads and are not personalized treatment recommendations.</p>
+<div class="plan-section"><h2>Everyday habits, explained</h2><p class="plan-intro">Prewritten educational examples alongside the sample trends. These do not change with uploads and are not personalized treatment recommendations.</p>
 <div class="plan-grid">
 <div class="plan-card"><h3>Food choices</h3><p>A simple meal pattern can include vegetables, whole grains and a protein source such as lentils, beans, eggs or tofu. Choose options that fit your preferences and allergies.</p><p><b>Try tracking:</b> meal regularity and food variety, to discuss alongside your lab history.</p></div>
 <div class="plan-card"><h3>Movement</h3><p>Choose activities you enjoy, such as walking, cycling or strength exercises appropriate to your abilities. Seek professional guidance if you have symptoms, medical conditions or activity restrictions.</p><p><b>Try tracking:</b> activity type, duration and how you feel.</p></div>
 <div class="plan-card"><h3>Sleep and routine</h3><p>Keep a consistent sleep schedule where possible, and notice patterns in rest, energy and daily routines.</p><p><b>Try tracking:</b> bedtimes and wake times, without assuming these explain a lab change.</p></div>
 <div class="plan-card"><h3>Prepare for a consultation</h3><p>Bring your original reports and relevant context, including symptoms and changes in prescribed medicines. Ask a clinician which changes matter for you.</p><p><b>Important:</b> a trend does not establish its cause. This demo cannot diagnose conditions or decide treatment.</p></div>
-</div><div class="footnote">No medication decisions, supplement doses or promised health improvements. Tracking suggestions are examples; this demo does not include a habit tracker.</div></div></section>
+</div><div class="footnote">No medication decisions, supplement doses or promised health improvements. Tracking suggestions are examples; this sample site does not include a habit tracker.</div></div></section>
 <section class="tab-panel" id="tab-upload" hidden>
   <div class="plan-section">
     <h3>Upload a new lab report</h3>
-    <p class="plan-intro">Try the synthetic sample PDF below. Text-based PDFs are parsed locally; scanned images are not supported. Reviewed values stay only in page memory and disappear on refresh or reset. Please do not use real health records in this public demo.</p><div class="btn-row"><a class="btn btn-ghost" href="samples/synthetic-lab-report.pdf" download>Download sample PDF</a><button class="btn btn-primary" id="load-sample">Try sample report</button></div>
+    <p class="plan-intro">Try the sample PDF below. Text-based PDFs are parsed locally; scanned images are not supported. Reviewed values stay only in page memory and disappear on refresh or reset. Please do not use real health records in this sample site.</p><div class="btn-row"><a class="btn btn-ghost" href="samples/synthetic-lab-report.pdf" download>Download sample PDF</a><button class="btn btn-primary" id="load-sample">Try sample report</button></div>
 
     <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload PDF lab report">
       <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
@@ -82,7 +105,7 @@
       </div>
       <p style="font-size:var(--fs-xs);color:var(--text-3);margin-top:10px">Rows flagged "check" or "big jump vs last" were extracted with lower confidence, so verify them against the PDF before saving. All fields are editable.</p>
       <div class="btn-row">
-        <button class="btn btn-primary" id="btn-save">Add to demo session</button>
+        <button class="btn btn-primary" id="btn-save">Add to session</button>
         <button class="btn btn-ghost" id="btn-export">Export reviewed JSON</button>
         <button class="btn btn-ghost" id="btn-clear">Discard</button>
       </div>

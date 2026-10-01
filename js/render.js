@@ -1,6 +1,7 @@
 // render.js, dashboard DOM rendering.
 import { latest, previous, inRange, model } from "./data.js";
-import { markerChart } from "./charts.js";
+import { scoreSeries, breakdownScores } from "./score.js";
+import { markerChart, scoreChart } from "./charts.js";
 import { computeDigest, digestCopy } from "./digest.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -17,8 +18,56 @@ function fmt(v) {
   return Math.abs(v) >= 100 ? String(Math.round(v * 10) / 10) : String(Math.round(v * 100) / 100);
 }
 
+function ringColor(score) {
+  const c = getComputedStyle(document.documentElement);
+  if (score >= 80) return c.getPropertyValue("--ok").trim();
+  if (score >= 60) return c.getPropertyValue("--warn").trim();
+  return c.getPropertyValue("--bad").trim();
+}
+
 export function renderHero(m) {
-  $("#demo-stats").innerHTML = `<span><b>${m.reports.length}</b> reports</span><span><b>${m.markers.length}</b> biomarkers</span><span>Fictional profile: Demo User</span>`;
+  $("#demo-stats").innerHTML = `<span><b>${m.reports.length}</b> reports</span><span><b>${m.markers.length}</b> biomarkers</span>`;
+  const labels = m.reports.map(r => r.label);
+  const scores = scoreSeries(m.markers, m.reports.length);
+  let curIdx = scores.length - 1;
+  while (curIdx > 0 && scores[curIdx] === null) curIdx--;
+  const score = scores[curIdx];
+  let prevIdx = curIdx - 1;
+  while (prevIdx >= 0 && scores[prevIdx] === null) prevIdx--;
+  const prev = prevIdx >= 0 ? scores[prevIdx] : null;
+
+  // ring
+  const R = 74, CIRC = 2 * Math.PI * R;
+  const ring = $("#ring-val");
+  ring.style.stroke = score === null ? "var(--text-3)" : ringColor(score);
+  ring.setAttribute("stroke-dasharray", CIRC.toFixed(1));
+  ring.setAttribute("stroke-dashoffset", CIRC.toFixed(1));
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    ring.setAttribute("stroke-dashoffset", (CIRC * (1 - score / 100)).toFixed(1));
+  }));
+  $("#ring-num").textContent = score ?? "N/A";
+  $("#hero-date").textContent = m.reports[curIdx].label;
+
+  // delta vs previous report
+  const deltaEl = $("#hero-delta");
+  if (prev !== null && score !== null) {
+    deltaEl.hidden = false;
+    const d = score - prev;
+    deltaEl.className = "delta-chip " + (d > 0 ? "delta-up" : d < 0 ? "delta-down" : "delta-flat");
+    deltaEl.textContent = (d > 0 ? "+" + d : d < 0 ? String(d) : "no change") + " vs " + m.reports[prevIdx].label;
+  } else deltaEl.hidden = true;
+
+  // breakdown bars
+  const bd = breakdownScores(m.markers, m.breakdown, curIdx);
+  $("#breakdown").innerHTML = bd.map(c => {
+    const col = c.score >= 80 ? "var(--ok)" : c.score >= 60 ? "var(--warn)" : "var(--bad)";
+    return `<div class="bd-item">
+      <div class="bd-top"><span>${c.name}</span><b>${c.score ?? "N/A"}</b></div>
+      <div class="bd-track"><div class="bd-fill" style="width:${c.score ?? 0}%;background:${col}"></div></div>
+    </div>`;
+  }).join("");
+
+  scoreChart($("#chart-score"), labels, scores);
 }
 
 export function renderDigest(m) {
@@ -97,7 +146,7 @@ export function renderSections(m) {
           <div class="mc-detail" id="detail-${mk.id}">
             <div>
               <p>${mk.explain}</p>
-              <div class="your-status"><b>Demo note:</b> ${mk.status}</div>
+              <div class="your-status"><b>Sample note:</b> ${mk.status}</div>
             </div>
           </div>
         </div>`;
@@ -126,8 +175,8 @@ export function renderSections(m) {
 }
 
 export function renderMeta(m) {
-  $("#hero-sub").textContent = `${m.reports.length} fictional reports | 29 biomarkers`;
-  $("#note-foot").textContent = "Synthetic data only. Shading shows illustrative reference ranges, not personalized targets. Missing tests are not zero; a marker's latest measurement may predate the newest report. Verify real results with a clinician.";
+  $("#hero-sub").textContent = `${m.reports.length} sample reports | 29 biomarkers`;
+  $("#note-foot").textContent = "Fictional records only. Shading shows illustrative reference ranges, not personalized targets. Missing tests are not zero; a marker's latest measurement may predate the newest report. Verify real results with a clinician.";
 }
 
 export function renderDashboard() {

@@ -30,49 +30,49 @@
       "id": "thyroid",
       "title": "Thyroid",
       "priority": "normal",
-      "badge": "Demo data"
+      "badge": "Sample data"
     },
     {
       "id": "lipid",
       "title": "Lipids",
       "priority": "normal",
-      "badge": "Demo data"
+      "badge": "Sample data"
     },
     {
       "id": "vitamins",
       "title": "Vitamins",
       "priority": "normal",
-      "badge": "Demo data"
+      "badge": "Sample data"
     },
     {
       "id": "electrolytes",
       "title": "Electrolytes",
       "priority": "normal",
-      "badge": "Demo data"
+      "badge": "Sample data"
     },
     {
       "id": "sugar",
       "title": "Blood sugar",
       "priority": "normal",
-      "badge": "Demo data"
+      "badge": "Sample data"
     },
     {
       "id": "cbc",
       "title": "Blood count",
       "priority": "normal",
-      "badge": "Demo data"
+      "badge": "Sample data"
     },
     {
       "id": "liver",
       "title": "Liver",
       "priority": "normal",
-      "badge": "Demo data"
+      "badge": "Sample data"
     },
     {
       "id": "kidney",
       "title": "Kidney",
       "priority": "normal",
-      "badge": "Demo data"
+      "badge": "Sample data"
     }
   ],
   "markers": [
@@ -92,7 +92,17 @@
         "max": 4.5
       },
       "explain": "TSH is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 0.5,
+        "optMax": 4.5,
+        "hardMin": 0.1,
+        "hardMax": 15,
+        "invertTrend": false,
+        "weight": 0.2,
+        "refMin": 0.35,
+        "refMax": 4.94
+      }
     },
     {
       "id": "ft3",
@@ -110,7 +120,7 @@
         "max": 4.4
       },
       "explain": "Free T3 is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "ft4",
@@ -128,7 +138,7 @@
         "max": 1.8
       },
       "explain": "Free T4 is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "tt3",
@@ -146,7 +156,7 @@
         "max": 2.0
       },
       "explain": "Total T3 is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "tt4",
@@ -164,7 +174,7 @@
         "max": 12
       },
       "explain": "Total T4 is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "hdl",
@@ -182,7 +192,17 @@
         "max": null
       },
       "explain": "HDL is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 45,
+        "optMax": 80,
+        "hardMin": 20,
+        "hardMax": null,
+        "invertTrend": true,
+        "weight": 0.1,
+        "refMin": 40,
+        "refMax": null
+      }
     },
     {
       "id": "ldl",
@@ -200,7 +220,17 @@
         "max": 100
       },
       "explain": "LDL is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 50,
+        "optMax": 100,
+        "hardMin": null,
+        "hardMax": 190,
+        "invertTrend": false,
+        "weight": 0.08,
+        "refMin": null,
+        "refMax": 100
+      }
     },
     {
       "id": "tg",
@@ -218,7 +248,17 @@
         "max": 150
       },
       "explain": "Triglycerides is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 50,
+        "optMax": 150,
+        "hardMin": null,
+        "hardMax": 500,
+        "invertTrend": false,
+        "weight": 0.07,
+        "refMin": null,
+        "refMax": 150
+      }
     },
     {
       "id": "tc",
@@ -236,7 +276,7 @@
         "max": 200
       },
       "explain": "Total Cholesterol is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "vldl",
@@ -254,7 +294,7 @@
         "max": 40
       },
       "explain": "VLDL is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "cholratio",
@@ -272,7 +312,7 @@
         "max": 5
       },
       "explain": "Chol/HDL Ratio is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "vitd",
@@ -290,7 +330,17 @@
         "max": 100
       },
       "explain": "Vitamin D is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 30,
+        "optMax": 80,
+        "hardMin": 10,
+        "hardMax": 150,
+        "invertTrend": true,
+        "weight": 0.025,
+        "refMin": 30,
+        "refMax": 100
+      }
     },
     {
       "id": "vitb12",
@@ -308,7 +358,17 @@
         "max": 900
       },
       "explain": "Vitamin B12 is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 211,
+        "optMax": 700,
+        "hardMin": 100,
+        "hardMax": 1500,
+        "invertTrend": true,
+        "weight": 0.025,
+        "refMin": 211,
+        "refMax": null
+      }
     },
     {
       "id": "sodium",
@@ -326,7 +386,17 @@
         "max": 145
       },
       "explain": "Sodium is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 137,
+        "optMax": 145,
+        "hardMin": 125,
+        "hardMax": 155,
+        "invertTrend": false,
+        "weight": 0.03,
+        "refMin": 137,
+        "refMax": 145
+      }
     },
     {
       "id": "potassium",
@@ -344,7 +414,7 @@
         "max": 5.1
       },
       "explain": "Potassium is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "hba1c",
@@ -362,7 +432,17 @@
         "max": 5.6
       },
       "explain": "HbA1c is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 4.0,
+        "optMax": 5.6,
+        "hardMin": 3,
+        "hardMax": 8,
+        "invertTrend": false,
+        "weight": 0.1,
+        "refMin": null,
+        "refMax": 5.7
+      }
     },
     {
       "id": "glucose",
@@ -380,7 +460,17 @@
         "max": 99
       },
       "explain": "Fasting Glucose is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 70,
+        "optMax": 100,
+        "hardMin": 50,
+        "hardMax": 180,
+        "invertTrend": false,
+        "weight": 0.05,
+        "refMin": 70,
+        "refMax": 100
+      }
     },
     {
       "id": "hb",
@@ -398,7 +488,17 @@
         "max": 17
       },
       "explain": "Hemoglobin is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 13.5,
+        "optMax": 16,
+        "hardMin": 10,
+        "hardMax": 20,
+        "invertTrend": true,
+        "weight": 0.05,
+        "refMin": 13,
+        "refMax": 17
+      }
     },
     {
       "id": "platelets",
@@ -416,7 +516,7 @@
         "max": 450
       },
       "explain": "Platelets is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "wbc",
@@ -434,7 +534,17 @@
         "max": 11
       },
       "explain": "WBC is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 4,
+        "optMax": 10,
+        "hardMin": 2,
+        "hardMax": 15,
+        "invertTrend": false,
+        "weight": 0.05,
+        "refMin": 4,
+        "refMax": 10
+      }
     },
     {
       "id": "esr",
@@ -452,7 +562,17 @@
         "max": 20
       },
       "explain": "ESR is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 0,
+        "optMax": 10,
+        "hardMin": null,
+        "hardMax": 30,
+        "invertTrend": false,
+        "weight": 0.02,
+        "refMin": 0,
+        "refMax": 10
+      }
     },
     {
       "id": "ast",
@@ -470,7 +590,17 @@
         "max": 40
       },
       "explain": "AST/SGOT is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 10,
+        "optMax": 40,
+        "hardMin": null,
+        "hardMax": 100,
+        "invertTrend": false,
+        "weight": 0.05,
+        "refMin": null,
+        "refMax": 50
+      }
     },
     {
       "id": "alt",
@@ -488,7 +618,17 @@
         "max": 45
       },
       "explain": "ALT/SGPT is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 10,
+        "optMax": 40,
+        "hardMin": null,
+        "hardMax": 100,
+        "invertTrend": false,
+        "weight": 0.05,
+        "refMin": null,
+        "refMax": 50
+      }
     },
     {
       "id": "bilirubin",
@@ -506,7 +646,7 @@
         "max": 1.2
       },
       "explain": "Bilirubin Total is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "albumin",
@@ -524,7 +664,7 @@
         "max": 5
       },
       "explain": "Albumin is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "creatinine",
@@ -542,7 +682,17 @@
         "max": 1.3
       },
       "explain": "Creatinine is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 0.6,
+        "optMax": 1.2,
+        "hardMin": 0.3,
+        "hardMax": 2.5,
+        "invertTrend": false,
+        "weight": 0.05,
+        "refMin": 0.66,
+        "refMax": 1.25
+      }
     },
     {
       "id": "uricacid",
@@ -560,7 +710,17 @@
         "max": 7.2
       },
       "explain": "Uric Acid is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds.",
+      "scoring": {
+        "optMin": 3.5,
+        "optMax": 7.5,
+        "hardMin": 2,
+        "hardMax": 12,
+        "invertTrend": false,
+        "weight": 0.05,
+        "refMin": 3.5,
+        "refMax": 8.5
+      }
     },
     {
       "id": "egfr",
@@ -578,7 +738,7 @@
         "max": null
       },
       "explain": "eGFR is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     },
     {
       "id": "urea",
@@ -596,10 +756,59 @@
         "max": 45
       },
       "explain": "Urea is shown here to demonstrate longitudinal lab-data visualization.",
-      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+      "status": "Fictional sample values. Example ranges are illustrative, not personalized clinical thresholds."
     }
   ],
   "notes": {
     "synthetic": true
-  }
+  },
+  "breakdown": [
+    {
+      "name": "Thyroid",
+      "markers": [
+        "tsh",
+        "tt3",
+        "tt4"
+      ],
+      "fallback": null
+    },
+    {
+      "name": "HDL",
+      "markers": [
+        "hdl"
+      ],
+      "fallback": null
+    },
+    {
+      "name": "LDL / TG",
+      "markers": [
+        "ldl",
+        "tg"
+      ],
+      "fallback": null
+    },
+    {
+      "name": "Blood Sugar",
+      "markers": [
+        "hba1c"
+      ],
+      "fallback": null
+    },
+    {
+      "name": "Liver",
+      "markers": [
+        "ast",
+        "alt"
+      ],
+      "fallback": null
+    },
+    {
+      "name": "Kidney",
+      "markers": [
+        "creatinine",
+        "uricacid"
+      ],
+      "fallback": null
+    }
+  ]
 }

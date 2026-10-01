@@ -101,7 +101,7 @@ export function scoreChart(canvas, labels, scores) {
         tooltip: { callbacks: { label: ctx => `Score: ${ctx.parsed.y}/100` } },
       },
       scales: {
-        y: { min: 35, max: 100, grid: { color: c.grid }, ticks: { color: c.text } },
+        y: { min: 0, max: 100, grid: { color: c.grid }, ticks: { color: c.text } },
         x: { grid: { display: false }, ticks: { color: c.text } },
       },
     },
