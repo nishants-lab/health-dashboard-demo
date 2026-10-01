@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Health Dashboard | Synthetic Demo</title>
+<meta name="theme-color" content="#0b0f14">
+<link rel="stylesheet" href="css/main.css">
+<script src="vendor/chart.umd.min.js"></script>
+<script src="vendor/chartjs-plugin-annotation.min.js"></script>
+<script type="module">
+  import * as pdfjsLib from "./vendor/pdf.min.mjs";
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdf.worker.min.mjs";
+  window.pdfjsLib = pdfjsLib;
+</script>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-inner">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ad07f"/><stop offset="1" stop-color="#22b39c"/></linearGradient></defs><rect x="0" y="0" width="32" height="32" rx="8" fill="url(#bm-g)"/><path d="M4 16.5 H10.4 L12.6 11 L15.7 22 L18.2 14 L20.1 16.5 H28" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="brand-text">Health Dashboard<small id="hero-sub"></small></span></div>
+    <nav class="header-tabs" role="tablist" aria-label="Sections">
+      <button class="header-tab" data-tab="dashboard" role="tab" aria-selected="true">Dashboard</button>
+      <button class="header-tab" data-tab="plan" role="tab" aria-selected="false">Lifestyle</button>
+      <button class="header-tab" data-tab="upload" role="tab" aria-selected="false">Upload Report</button>
+    </nav>
+    <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">\u263e</button>
+  </div>
+  <div class="chips-row" id="chips-row"><div id="chips"></div></div>
+</header>
+
+<main class="page">
+<div class="demo-banner"><strong>Synthetic demo. No real patient records.</strong><p>Explore fictional lab trends, review an example PDF, and see general lifestyle education. Not medical advice.</p><button class="btn btn-ghost" id="reset-demo">Reset demo</button></div>
+
+<section class="tab-panel" id="tab-dashboard">
+  <div class="demo-intro"><span class="eyebrow">PERSONAL HEALTH ANALYTICS</span><h1>From scattered reports to a clearer history.</h1><p>Review changes across 29 biomarkers. The figures below are invented to illustrate the product, not health outcomes.</p><div class="demo-stats" id="demo-stats"></div></div>
+  <div class="digest" id="digest" hidden>
+    <h3>Changes between latest available measurements</h3>
+    <div class="digest-chips" id="digest-chips"></div>
+  </div>
+
+  <div id="sections"></div>
+
+  <div class="footnote" id="note-foot"></div>
+</section>
+
+<section class="tab-panel" id="tab-plan" hidden>
+<div class="plan-section"><h2>Everyday habits, explained</h2><p class="plan-intro">Prewritten educational examples alongside the demo trends. These do not change with uploads and are not personalized treatment recommendations.</p>
+<div class="plan-grid">
+<div class="plan-card"><h3>Food choices</h3><p>A simple meal pattern can include vegetables, whole grains and a protein source such as lentils, beans, eggs or tofu. Choose options that fit your preferences and allergies.</p><p><b>Try tracking:</b> meal regularity and food variety, to discuss alongside your lab history.</p></div>
+<div class="plan-card"><h3>Movement</h3><p>Choose activities you enjoy, such as walking, cycling or strength exercises appropriate to your abilities. Seek professional guidance if you have symptoms, medical conditions or activity restrictions.</p><p><b>Try tracking:</b> activity type, duration and how you feel.</p></div>
+<div class="plan-card"><h3>Sleep and routine</h3><p>Keep a consistent sleep schedule where possible, and notice patterns in rest, energy and daily routines.</p><p><b>Try tracking:</b> bedtimes and wake times, without assuming these explain a lab change.</p></div>
+<div class="plan-card"><h3>Prepare for a consultation</h3><p>Bring your original reports and relevant context, including symptoms and changes in prescribed medicines. Ask a clinician which changes matter for you.</p><p><b>Important:</b> a trend does not establish its cause. This demo cannot diagnose conditions or decide treatment.</p></div>
+</div><div class="footnote">No medication decisions, supplement doses or promised health improvements. Tracking suggestions are examples; this demo does not include a habit tracker.</div></div></section>
+<section class="tab-panel" id="tab-upload" hidden>
+  <div class="plan-section">
+    <h3>Upload a new lab report</h3>
+    <p class="plan-intro">Try the synthetic sample PDF below. Text-based PDFs are parsed locally; scanned images are not supported. Reviewed values stay only in page memory and disappear on refresh or reset. Please do not use real health records in this public demo.</p><div class="btn-row"><a class="btn btn-ghost" href="samples/synthetic-lab-report.pdf" download>Download sample PDF</a><button class="btn btn-primary" id="load-sample">Try sample report</button></div>
+
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload PDF lab report">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <div class="big">Drop PDF here, or click to browse</div>
+      <div class="small">The PDF is read in your browser; reviewed values stay only in this page session</div>
+      <input type="file" id="file-input" accept=".pdf" hidden>
+    </div>
+
+    <div id="parse-status" hidden style="font-size:var(--fs-sm);color:var(--text-2);margin-bottom:16px"></div>
+
+    <div id="review" class="review-card" hidden>
+      <h4>Review before saving</h4>
+      <div class="review-meta">
+        <div><span class="k">Report date</span><input type="date" id="rv-date"></div>
+        <div><span class="k">Detected lab</span><span id="rv-lab">-</span></div>
+        <div><span class="k">Coverage</span><span id="rv-count">-</span></div>
+        <div><span class="k">File</span><span id="rv-file">-</span></div>
+      </div>
+      <div class="table-scroll">
+        <table class="review-table">
+          <thead><tr><th>Marker</th><th>Value</th><th>Confidence</th><th>Last report</th></tr></thead>
+          <tbody id="rv-tbody"></tbody>
+        </table>
+      </div>
+      <p style="font-size:var(--fs-xs);color:var(--text-3);margin-top:10px">Rows flagged "check" or "big jump vs last" were extracted with lower confidence, so verify them against the PDF before saving. All fields are editable.</p>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="btn-save">Add to demo session</button>
+        <button class="btn btn-ghost" id="btn-export">Export reviewed JSON</button>
+        <button class="btn btn-ghost" id="btn-clear">Discard</button>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+</main>
+
+<nav class="bottom-nav" aria-label="Sections">
+  <button data-tab="dashboard" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l2-2 4 4 8-8 4 4"/></svg>Dashboard</button>
+  <button data-tab="plan" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5a1 1 0 0 1 1-1h10l5 5v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"/><path d="M14 4v5h5"/></svg>Plan</button>
+  <button data-tab="upload" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Upload</button>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

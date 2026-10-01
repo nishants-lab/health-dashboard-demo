@@ -1,0 +1,605 @@
+{
+  "profile": {
+    "name": "Demo User",
+    "synthetic": true
+  },
+  "reports": [
+    {
+      "id": "2025-10-01",
+      "label": "Oct 2025",
+      "source": "synthetic"
+    },
+    {
+      "id": "2026-01-01",
+      "label": "Jan 2026",
+      "source": "synthetic"
+    },
+    {
+      "id": "2026-04-01",
+      "label": "Apr 2026",
+      "source": "synthetic"
+    },
+    {
+      "id": "2026-07-01",
+      "label": "Jul 2026",
+      "source": "synthetic"
+    }
+  ],
+  "sections": [
+    {
+      "id": "thyroid",
+      "title": "Thyroid",
+      "priority": "normal",
+      "badge": "Demo data"
+    },
+    {
+      "id": "lipid",
+      "title": "Lipids",
+      "priority": "normal",
+      "badge": "Demo data"
+    },
+    {
+      "id": "vitamins",
+      "title": "Vitamins",
+      "priority": "normal",
+      "badge": "Demo data"
+    },
+    {
+      "id": "electrolytes",
+      "title": "Electrolytes",
+      "priority": "normal",
+      "badge": "Demo data"
+    },
+    {
+      "id": "sugar",
+      "title": "Blood sugar",
+      "priority": "normal",
+      "badge": "Demo data"
+    },
+    {
+      "id": "cbc",
+      "title": "Blood count",
+      "priority": "normal",
+      "badge": "Demo data"
+    },
+    {
+      "id": "liver",
+      "title": "Liver",
+      "priority": "normal",
+      "badge": "Demo data"
+    },
+    {
+      "id": "kidney",
+      "title": "Kidney",
+      "priority": "normal",
+      "badge": "Demo data"
+    }
+  ],
+  "markers": [
+    {
+      "id": "tsh",
+      "name": "TSH",
+      "unit": "µIU/mL",
+      "section": "thyroid",
+      "data": [
+        3.1,
+        3.5,
+        3.3,
+        3.0
+      ],
+      "ref": {
+        "min": 0.4,
+        "max": 4.5
+      },
+      "explain": "TSH is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "ft3",
+      "name": "Free T3",
+      "unit": "pg/mL",
+      "section": "thyroid",
+      "data": [
+        3.0,
+        3.2,
+        3.1,
+        3.3
+      ],
+      "ref": {
+        "min": 2.0,
+        "max": 4.4
+      },
+      "explain": "Free T3 is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "ft4",
+      "name": "Free T4",
+      "unit": "ng/dL",
+      "section": "thyroid",
+      "data": [
+        1.1,
+        1.2,
+        1.15,
+        1.25
+      ],
+      "ref": {
+        "min": 0.8,
+        "max": 1.8
+      },
+      "explain": "Free T4 is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "tt3",
+      "name": "Total T3",
+      "unit": "ng/mL",
+      "section": "thyroid",
+      "data": [
+        1.2,
+        1.3,
+        1.25,
+        1.35
+      ],
+      "ref": {
+        "min": 0.8,
+        "max": 2.0
+      },
+      "explain": "Total T3 is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "tt4",
+      "name": "Total T4",
+      "unit": "µg/dL",
+      "section": "thyroid",
+      "data": [
+        7.2,
+        7.6,
+        7.4,
+        7.8
+      ],
+      "ref": {
+        "min": 5,
+        "max": 12
+      },
+      "explain": "Total T4 is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "hdl",
+      "name": "HDL",
+      "unit": "mg/dL",
+      "section": "lipid",
+      "data": [
+        42,
+        44,
+        46,
+        48
+      ],
+      "ref": {
+        "min": 40,
+        "max": null
+      },
+      "explain": "HDL is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "ldl",
+      "name": "LDL",
+      "unit": "mg/dL",
+      "section": "lipid",
+      "data": [
+        128,
+        121,
+        115,
+        108
+      ],
+      "ref": {
+        "min": null,
+        "max": 100
+      },
+      "explain": "LDL is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "tg",
+      "name": "Triglycerides",
+      "unit": "mg/dL",
+      "section": "lipid",
+      "data": [
+        178,
+        165,
+        151,
+        142
+      ],
+      "ref": {
+        "min": null,
+        "max": 150
+      },
+      "explain": "Triglycerides is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "tc",
+      "name": "Total Cholesterol",
+      "unit": "mg/dL",
+      "section": "lipid",
+      "data": [
+        206,
+        198,
+        191,
+        184
+      ],
+      "ref": {
+        "min": null,
+        "max": 200
+      },
+      "explain": "Total Cholesterol is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "vldl",
+      "name": "VLDL",
+      "unit": "mg/dL",
+      "section": "lipid",
+      "data": [
+        35.6,
+        33,
+        30.2,
+        28.4
+      ],
+      "ref": {
+        "min": 5,
+        "max": 40
+      },
+      "explain": "VLDL is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "cholratio",
+      "name": "Chol/HDL Ratio",
+      "unit": "",
+      "section": "lipid",
+      "data": [
+        4.9,
+        4.5,
+        4.15,
+        3.83
+      ],
+      "ref": {
+        "min": null,
+        "max": 5
+      },
+      "explain": "Chol/HDL Ratio is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "vitd",
+      "name": "Vitamin D",
+      "unit": "ng/mL",
+      "section": "vitamins",
+      "data": [
+        24,
+        27,
+        31,
+        34
+      ],
+      "ref": {
+        "min": 30,
+        "max": 100
+      },
+      "explain": "Vitamin D is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "vitb12",
+      "name": "Vitamin B12",
+      "unit": "pg/mL",
+      "section": "vitamins",
+      "data": [
+        310,
+        330,
+        350,
+        370
+      ],
+      "ref": {
+        "min": 200,
+        "max": 900
+      },
+      "explain": "Vitamin B12 is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "sodium",
+      "name": "Sodium",
+      "unit": "mmol/L",
+      "section": "electrolytes",
+      "data": [
+        139,
+        140,
+        138,
+        141
+      ],
+      "ref": {
+        "min": 135,
+        "max": 145
+      },
+      "explain": "Sodium is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "potassium",
+      "name": "Potassium",
+      "unit": "mmol/L",
+      "section": "electrolytes",
+      "data": [
+        4.2,
+        4.3,
+        4.1,
+        4.4
+      ],
+      "ref": {
+        "min": 3.5,
+        "max": 5.1
+      },
+      "explain": "Potassium is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "hba1c",
+      "name": "HbA1c",
+      "unit": "%",
+      "section": "sugar",
+      "data": [
+        5.8,
+        5.7,
+        5.6,
+        5.5
+      ],
+      "ref": {
+        "min": 4,
+        "max": 5.6
+      },
+      "explain": "HbA1c is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "glucose",
+      "name": "Fasting Glucose",
+      "unit": "mg/dL",
+      "section": "sugar",
+      "data": [
+        105,
+        102,
+        98,
+        95
+      ],
+      "ref": {
+        "min": 70,
+        "max": 99
+      },
+      "explain": "Fasting Glucose is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "hb",
+      "name": "Hemoglobin",
+      "unit": "g/dL",
+      "section": "cbc",
+      "data": [
+        14.1,
+        14.3,
+        14.2,
+        14.4
+      ],
+      "ref": {
+        "min": 12,
+        "max": 17
+      },
+      "explain": "Hemoglobin is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "platelets",
+      "name": "Platelets",
+      "unit": "×10³/µL",
+      "section": "cbc",
+      "data": [
+        240,
+        255,
+        248,
+        260
+      ],
+      "ref": {
+        "min": 150,
+        "max": 450
+      },
+      "explain": "Platelets is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "wbc",
+      "name": "WBC",
+      "unit": "×10³/µL",
+      "section": "cbc",
+      "data": [
+        6.5,
+        6.8,
+        6.4,
+        6.9
+      ],
+      "ref": {
+        "min": 4,
+        "max": 11
+      },
+      "explain": "WBC is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "esr",
+      "name": "ESR",
+      "unit": "mm/hr",
+      "section": "cbc",
+      "data": [
+        12,
+        10,
+        11,
+        9
+      ],
+      "ref": {
+        "min": 0,
+        "max": 20
+      },
+      "explain": "ESR is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "ast",
+      "name": "AST/SGOT",
+      "unit": "U/L",
+      "section": "liver",
+      "data": [
+        24,
+        26,
+        23,
+        25
+      ],
+      "ref": {
+        "min": 0,
+        "max": 40
+      },
+      "explain": "AST/SGOT is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "alt",
+      "name": "ALT/SGPT",
+      "unit": "U/L",
+      "section": "liver",
+      "data": [
+        32,
+        30,
+        28,
+        29
+      ],
+      "ref": {
+        "min": 0,
+        "max": 45
+      },
+      "explain": "ALT/SGPT is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "bilirubin",
+      "name": "Bilirubin Total",
+      "unit": "mg/dL",
+      "section": "liver",
+      "data": [
+        0.7,
+        0.8,
+        0.6,
+        0.75
+      ],
+      "ref": {
+        "min": 0.2,
+        "max": 1.2
+      },
+      "explain": "Bilirubin Total is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "albumin",
+      "name": "Albumin",
+      "unit": "g/dL",
+      "section": "liver",
+      "data": [
+        4.1,
+        4.3,
+        4.2,
+        4.4
+      ],
+      "ref": {
+        "min": 3.5,
+        "max": 5
+      },
+      "explain": "Albumin is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "creatinine",
+      "name": "Creatinine",
+      "unit": "mg/dL",
+      "section": "kidney",
+      "data": [
+        0.9,
+        0.95,
+        0.92,
+        0.88
+      ],
+      "ref": {
+        "min": 0.6,
+        "max": 1.3
+      },
+      "explain": "Creatinine is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "uricacid",
+      "name": "Uric Acid",
+      "unit": "mg/dL",
+      "section": "kidney",
+      "data": [
+        6.5,
+        6.3,
+        6.6,
+        6.2
+      ],
+      "ref": {
+        "min": 3.5,
+        "max": 7.2
+      },
+      "explain": "Uric Acid is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "egfr",
+      "name": "eGFR",
+      "unit": "mL/min/1.73m²",
+      "section": "kidney",
+      "data": [
+        98,
+        96,
+        97,
+        101
+      ],
+      "ref": {
+        "min": 60,
+        "max": null
+      },
+      "explain": "eGFR is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    },
+    {
+      "id": "urea",
+      "name": "Urea",
+      "unit": "mg/dL",
+      "section": "kidney",
+      "data": [
+        27,
+        29,
+        26,
+        28
+      ],
+      "ref": {
+        "min": 15,
+        "max": 45
+      },
+      "explain": "Urea is shown here to demonstrate longitudinal lab-data visualization.",
+      "status": "Entirely fictional values. Example ranges are illustrative, not personalized clinical thresholds."
+    }
+  ],
+  "notes": {
+    "synthetic": true
+  }
+}

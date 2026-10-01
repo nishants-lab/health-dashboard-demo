@@ -1,0 +1,70 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 1300 >>
+stream
+BT /F1 11 Tf 45 800 Td 18 TL
+(SYNTHETIC LAB REPORT - DEMO ONLY) Tj
+T* (Fictional person: Demo User | Fictional lab: Demo Lab) Tj
+T* (Not a medical document. All values are invented.) Tj
+T* (Collection Date: 01/10/2026) Tj
+T* () Tj
+T* (Test name    Result    Unit) Tj
+T* (TSH    2.96 uIU/mL) Tj
+T* (Free T3    3.35 pg/mL) Tj
+T* (Free T4    1.23 ng/dL) Tj
+T* (Total T3    1.37 ng/mL) Tj
+T* (Total T4    7.68 ug/dL) Tj
+T* (HDL Cholesterol    48.72 mg/dL) Tj
+T* (LDL Cholesterol    106.38 mg/dL) Tj
+T* (Triglycerides    144.13 mg/dL) Tj
+T* (Total Cholesterol    181.24 mg/dL) Tj
+T* (VLDL    28.83 mg/dL) Tj
+T* (CHOL/HDL    3.9 Ratio) Tj
+T* (Vitamin D    34.51 ng/mL) Tj
+T* (Vitamin B12    364.45 pg/mL) Tj
+T* (Sodium    143.11 mmol/L) Tj
+T* (Potassium    4.33 mmol/L) Tj
+T* (HbA1c    5.58 %) Tj
+T* (Fasting Glucose    93.58 mg/dL) Tj
+T* (Hemoglobin    14.62 g/dL) Tj
+T* (Platelet Count    256.1 10^3/uL) Tj
+T* (WBC Count    7.0 10^3/uL) Tj
+T* (ESR    8.87 mm/hr) Tj
+T* (SGOT    25.37 U/L) Tj
+T* (SGPT    28.57 U/L) Tj
+T* (Total Bilirubin    0.76 mg/dL) Tj
+T* (Albumin    4.33 g/dL) Tj
+T* (Creatinine    0.89 mg/dL) Tj
+T* (Uric Acid    6.11 mg/dL) Tj
+T* (eGFR    102.51 mL/min/1.73m2) Tj
+T* (Urea    27.58 mg/dL) Tj
+T* () Tj
+T* (Synthetic product demonstration. Do not use for healthcare decisions.) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1663
+%%EOF
